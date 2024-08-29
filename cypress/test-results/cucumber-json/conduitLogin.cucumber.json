@@ -1,0 +1,71 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Conduit Login Functionality",
+    "line": 1,
+    "id": "conduit-login-functionality",
+    "tags": [],
+    "uri": "conduitLogin.feature",
+    "elements": [
+      {
+        "id": "conduit-login-functionality;login-and-logout-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Login and Logout with Valid Credentials",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User is on the login page",
+            "result": {
+              "status": "passed",
+              "duration": 2542000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User login with valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 905000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User click on the settings button",
+            "result": {
+              "status": "failed",
+              "duration": 4037000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Settings' but never did.\n    at Context.eval (cypress/e2e/cucumber/stepDefinitions/conduitLogin/conduitLogin_stepdef.js:18:6)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)\n    at getRet (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118826:20)\n    at tryCatcher (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:4315:29)\n    at Context.thenFn (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118837:66)\n    at Context.then (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:119088:21)\n    at wrapped (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:137994:19)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User click on the logout button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "User should be routed back to login page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
