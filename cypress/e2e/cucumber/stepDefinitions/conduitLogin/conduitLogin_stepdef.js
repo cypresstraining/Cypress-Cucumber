@@ -1,32 +1,30 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import CounduitLoginPage from '../../Pages/counduitLoginPage'
 beforeEach(function(){
-    cy.fixture('conduitLoginData').as('data')
+    cy.fixture('conduitLoginData').as('data') //loading the data from json file
 })
+const counduitLoginPage =new CounduitLoginPage() //create an object for the CounduitLoginPage class
 
 Given('User is on the login page', function () {
-    cy.visit('https://react-redux.realworld.io/');
-    cy.contains('Sign in').click()
+  counduitLoginPage.browseURL() //open the URL from browseURL method
+  counduitLoginPage.clickOnSign()//Clickn on Sign button through clickOnSign() method
 })
 
 When('User login with valid credentials', function () {
-    cy.get('input[type="email"]').type(this.data.validEmail)
-    cy.get('input[type="password"]').type(this.data.validPassword);
-    cy.get('button[type="submit"]').click()
+    counduitLoginPage.enterValidEmail(this.data.validEmail)
+    counduitLoginPage.enterValidPassword(this.data.validPassword)
+    counduitLoginPage.clickOnLoginButton()
     
 })
 
 When('User click on the settings button', function () {
-   cy.contains('Settings').click()
+    counduitLoginPage.clickOnSettings()
 })
 
 When('User click on the logout button', function () {
-   cy.get('.btn.btn-outline-danger').click()
+  counduitLoginPage.clickOnLogoutButton()
 })
 
 Then('User should be routed back to login page', function () {
-    cy.title().should('eq', 'Conduit')
-   cy.url().should('contain','https://react-redux.realworld.io/')
-   cy.get('h1').should('have.text','conduit')
-   cy.get('p').first().should('have.text','A place to share your knowledge.')
-   cy.get('p').last().should('have.text','Popular Tags')
+    counduitLoginPage.verifyResults()
 })
