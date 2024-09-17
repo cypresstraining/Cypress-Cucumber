@@ -20,9 +20,9 @@ Given('User is on the login pages', function () {
 })
 
 When('User login with valid credentials', function () {
-    counduitLoginPage.enterValidEmail(this.data.validEmail) //type the email from counduitLogin.json fiel through fixture and enterValidEmail method from counditLoginPage.js file
+    counduitLoginPage.enterValidEmail(this.data.email) //type the email from counduitLogin.json fiel through fixture and enterValidEmail method from counditLoginPage.js file
 
-    counduitLoginPage.enterValidPassword(this.data.validPassword)
+    counduitLoginPage.enterValidPassword(this.data.password)
     //in the above step we are calling the method enterValidPassword from counduitLoginPage.js file and counduitLogin.json file
 
     counduitLoginPage.clickOnLoginButton()

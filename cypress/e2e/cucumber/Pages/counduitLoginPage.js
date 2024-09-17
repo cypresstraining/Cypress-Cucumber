@@ -7,7 +7,7 @@ class CounduitLoginPage{
     cy.contains('Sign in').click()
     }
     enterValidEmail(validEmail){
-        cy.get('input[type="email"]').clear().type(validEmail)
+        cy.get('input[type="email"]').type(validEmail)
     }
     enterValidPassword(validPassword){
         cy.get('input[type="password"]').clear().type(validPassword);

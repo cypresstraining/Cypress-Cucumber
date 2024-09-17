@@ -4,4 +4,4 @@ class nopCreateCategory {
 
 }
 
-//export the class
+export default nopCreateCategory

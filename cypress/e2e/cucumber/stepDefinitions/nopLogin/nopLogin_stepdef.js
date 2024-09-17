@@ -1,29 +1,25 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import nopLoginPage from '../../Pages/nopLoginPage'
 beforeEach(function(){
-    cy.fixture('conduitLoginData').as('data')
+    cy.fixture('nopLoginData').as('data')
+})
+let nopLoginPage1 =new nopLoginPage()
+Given('User is on the nopcommerce login page', function () {
+nopLoginPage1.browseURL()  
+nopLoginPage1.clickOnLoginLink() 
 })
 
-Given('User is on the login page', function () {
-    cy.visit('https://react-redux.realworld.io/');
-    cy.contains('Sign in').click()
+When('nopcommerce login with valid credentials', function () {
+    nopLoginPage1.enterEmail(this.data.adminEmail)
+    nopLoginPage1.enterPassword(this.data.adminPassword)
+    nopLoginPage1.selectRememberMe()
+    nopLoginPage1.clickOnLogin()
 })
 
-When('User login with valid credentials', function () {
-    cy.get('input[type="email"]').type(this.data.validEmail)
-    cy.get('input[type="password"]').type(this.data.validPassword);
-    cy.get('button[type="submit"]').click()
-    cy.contains('')
+When('User click on the nopcommerce logout button', function () {
+nopLoginPage1.clickOnLogout()
 })
 
-When('User click on the settings button', function () {
-   cy.contains('Settings').click()
-})
-
-When('User click on the logout button', function () {
-   cy.get('.btn.btn-outline-danger').click()
-})
-
-Then('User should be routed back to login page', function () {
-    cy.title().should('eq', 'Conduit')
-   // cy.url().should('contain','https://react-redux.realworld.io/')
+Then('User should be routed back to nopcommerce page', function () {
+   nopLoginPage1.verifyResults()
 })
