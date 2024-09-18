@@ -1,7 +1,42 @@
-//write your methods in this page file 
-class nopCreateCategory {
-    //methods should be here 
+class nopCreateCategoryPage{
+browseCategoryURL(){
+    cy.visit('http://cypresstesting7-001-site1.jtempurl.com/Admin/Category/List', {
+        auth: {
+          username: '11190287',
+          password: '60-dayfreetrial',
+        } })
+
+}
+adminLogin(email,password){
+    cy.get('.ico-login').click()
+    cy.get('#Email').clear().type(email)
+    cy.get('#Password').clear().type(password)
+    cy.get('button[class="button-1 login-button"]').click()
+
+
+}
+clickOnAddNewCategory(){
+
+    cy.get('a[class="btn btn-primary"]').click()
+    //cy.contains('Add new')
+}
+fillUpCategoryDetails(category){
+cy.get('#Name').type(category)
+cy.get('#ParentCategoryId').select(0)
 
 }
 
-export default nopCreateCategory
+clickOnSaveCategory(){
+    cy.get('[name="save"]').click()
+}
+verifyNewlyCreatedCategory(category){
+
+    cy.get('[class="alert alert-success alert-dismissable"]').should('have.text','× The new category has been added successfully.')
+    cy.get('#SearchCategoryName').type(category)
+    cy.get('#search-categories').click()
+    cy.get('td:nth-child(2)').should('contain',category)
+}
+
+}
+
+export default nopCreateCategoryPage
