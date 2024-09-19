@@ -23,7 +23,7 @@ clickOnAddNewCategory(){
 fillUpCategoryDetails(category){
 cy.get('#Name').type(category)
 cy.get('#ParentCategoryId').select(0)
-
+//add your code here   to add more options
 }
 
 clickOnSaveCategory(){
