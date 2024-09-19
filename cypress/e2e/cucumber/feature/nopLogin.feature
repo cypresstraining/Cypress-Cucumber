@@ -1,5 +1,4 @@
 Feature: nopcommerce Login Functionality
-
   Scenario: nop commerce Login and Logout with Valid Credentials
     Given User is on the nopcommerce login page
     When nopcommerce login with valid credentials

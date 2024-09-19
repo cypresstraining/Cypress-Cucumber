@@ -1,7 +1,10 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 import nopCreateCategoryPage from '../../Pages/nopCreateCategoryPage'
 
+//created an obj for the nopCreateCategoryPage
 const nopCreateCategoryPage1 =new nopCreateCategoryPage()
+//Given step name should be copied into the step def 
+
 Given('Admin user is on Categories page',function(){
     nopCreateCategoryPage1.browseCategoryURL()
     nopCreateCategoryPage1.adminLogin(this.data.adminEmail,this.data.adminPassword)
