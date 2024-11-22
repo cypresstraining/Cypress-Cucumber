@@ -1,5 +1,4 @@
 Feature: Conduit Login Functionality
-
   Scenario: Login and Logout with Valid Credentials
     Given User is on the login pages
     When User login with valid credentials
