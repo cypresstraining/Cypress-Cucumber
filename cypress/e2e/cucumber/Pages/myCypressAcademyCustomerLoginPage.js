@@ -28,7 +28,7 @@ cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/customer/inf
 
 }
 cllickLogout(){
-    cy.contains('Log out').click()
+    cy.contains('Logout').click()
 
 }
 VerifyLogout(){
