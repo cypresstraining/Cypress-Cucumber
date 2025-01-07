@@ -12,7 +12,7 @@ browseURL(){
 clickLogin(){
     cy.get('.ico-login').click() 
     //connfirming that we are in login page 
-    cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/login?returnUrl=%2F')
+    cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/login?returnUrl=%2FAdmin%2FCategory%2FList')
     
 }
 performLogin(email,password){

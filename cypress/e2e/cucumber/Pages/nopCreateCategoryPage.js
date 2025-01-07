@@ -1,10 +1,11 @@
 class nopCreateCategoryPage{
 browseCategoryURL(){
-    cy.visit('http://cypresstesting7-001-site1.jtempurl.com/Admin/Category/List', {
+    cy.visit('http://ramanasoft123-001-site1.anytempurl.com/login?returnUrl=%2F',{
         auth: {
-          username: '11190287',
-          password: '60-dayfreetrial',
-        } })
+            username: '11211719',
+            password: '60-dayfreetrial',
+                   }
+    })
 
 }
 adminLogin(email,password){
