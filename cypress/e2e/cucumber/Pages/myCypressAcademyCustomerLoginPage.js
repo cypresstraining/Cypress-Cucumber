@@ -1,18 +1,18 @@
 class mycypressacademyCustomerLogin{
 
 browseURL(){
-    cy.visit('http://mycypressacademy-001-site1.atempurl.com/', {
+    cy.visit('http://ramanasoft123-001-site1.anytempurl.com/Admin/Category/List',{
         auth: {
-          username: '11200631',
-          password: '60-dayfreetrial',
-        },
-      })
+            username: '11211719',
+            password: '60-dayfreetrial',
+                   }
+    })
     
 }
 clickLogin(){
     cy.get('.ico-login').click() 
     //connfirming that we are in login page 
-    cy.url().should('eq','http://mycypressacademy-001-site1.atempurl.com/login?returnUrl=%2F')
+    cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/login?returnUrl=%2F')
     
 }
 performLogin(email,password){
@@ -24,7 +24,7 @@ cy.get('button[class="button-1 login-button"]').click()
 }
 clickMyaccount(){
     cy.contains('My account').click()
-cy.url().should('eq','http://mycypressacademy-001-site1.atempurl.com/customer/info')
+cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/customer/info')
 
 }
 cllickLogout(){
@@ -32,7 +32,7 @@ cllickLogout(){
 
 }
 VerifyLogout(){
-cy.url().should('eq','http://mycypressacademy-001-site1.atempurl.com/')
+cy.url().should('eq','http://ramanasoft123-001-site1.anytempurl.com/')
 cy.get('h2').should('contain','Welcome to our store')    
 
 }
