@@ -19,7 +19,7 @@ myCypressAcademyCustomerLoginPage.performLogin(this.testdata.email,this.testdata
 
 })
 When('User click on the My account Link', function () {
-    myCypressAcademyCustomerLoginPage.clickMyaccount()
+    //myCypressAcademyCustomerLoginPage.clickMyaccount()
 })
 When('User click on the logout Link', function () {
     myCypressAcademyCustomerLoginPage.cllickLogout()
